@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeff Gunderson Code Blog</title>
+
+    <link href="/thirdParty/google/prettify.css" rel="stylesheet">
+    <script src="/thirdParty/google/prettify.js"></script>
+
+    <link href="/css/custom.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-sanitize.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.js"></script>
+    <script src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+
+    <script src="/index.js"></script>
+    <script src="/routing/routes.js"></script>
+    <script src="/routing/home/home.js"></script>
+    <script src="/routing/post/post.js"></script>
+    <script src="/routing/create/create.js"></script>
+    <script src="/modules/posts/posts.js"></script>
+
+</head>
+<body ng-app="blog">
+
+    <div ng-include="'/includes/header.html'"></div>
+
+    <div ng-view></div>
+
+</body>
+</html>
