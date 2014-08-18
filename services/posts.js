@@ -6,8 +6,9 @@ blog.app.factory( 'postService', [ '$firebase', function( $firebase ) {
     var pub = {
 
         createPost: function( data ) {
-            postRef.child( data.permalink ).push( data, function() {
-                postsListRef.push({
+
+            postRef.child( data.permalink ).set( data, function() {
+                postsListRef.child( data.permalink ).set({
                     title: data.title,
                     date: data.date,
                     permalink: data.permalink
@@ -15,13 +16,23 @@ blog.app.factory( 'postService', [ '$firebase', function( $firebase ) {
             } );
         },
 
+        updatePost: function( data ) {
+
+            postRef.child( data.permalink ).update( data, function() {
+                postsListRef.child( data.permalink).update({
+                    title: data.title,
+                    permalink: data.permalink
+                })
+            } );
+
+        },
+
         posts: function() {
             return $firebase( postsListRef ).$asArray();
         },
 
         getPost: function( key ) {
-            console.log( key );
-            return $firebase( postRef.child( key ) ).$asArray();
+            return $firebase( postRef.child( key ) ).$asObject();
         }
 
     };

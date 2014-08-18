@@ -25,7 +25,32 @@ blog.app.directive('createPost', [ 'postService', function( postService ) {
     }
 }]);
 
-blog.app.directive('posts', [ 'postService', function( postService) {
+blog.app.directive('editPost', [ '$route', 'postService', function( $route, postService ) {
+    return {
+        restrict: 'E',
+        scope: {},
+        templateUrl: '/modules/posts/edit-post.html',
+        link: function( $scope ) {
+
+            var postParam = $route.current.params.post;
+            $scope.postData = postService.getPost( postParam );
+
+            $scope.updatePost = function() {
+
+                var data = {
+                    title: $scope.postData.title,
+                    post: $scope.postData.post,
+                    permalink: $scope.postData.permalink
+                }
+
+                postService.updatePost( data );
+            }
+
+        }
+    }
+}]);
+
+blog.app.directive('posts', [ 'postService', 'auth', function( postService, auth ) {
     return {
         restrict: 'E',
         scope: {},
@@ -33,6 +58,7 @@ blog.app.directive('posts', [ 'postService', function( postService) {
         link: function( $scope ) {
 
             $scope.posts = postService.posts();
+            $scope.auth = auth;
 
         }
     }
@@ -46,7 +72,7 @@ blog.app.directive('post', [ '$route', '$timeout', 'postService', function( $rou
         link: function( $scope, $element, $attrs ) {
 
             var postParam = $route.current.params.post;
-            $scope.posts = postService.getPost( postParam );
+            $scope.post = postService.getPost( postParam );
 
             $timeout(function() {
                 prettyPrint();

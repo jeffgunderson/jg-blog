@@ -12,6 +12,10 @@ blog.app.config( [ '$routeProvider', '$locationProvider',
                 controller: 'post',
                 templateUrl: '/routing/post/post.html'
             })
+            .when( '/edit/:post', {
+                controller: 'edit',
+                templateUrl: '/routing/edit/edit.html'
+            })
             .when( '/private/create', {
                 controller: 'create',
                 templateUrl: '/routing/create/create.html'
