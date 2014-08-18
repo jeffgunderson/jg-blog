@@ -15,6 +15,11 @@ blog.app.config( [ '$routeProvider', '$locationProvider',
             .when( '/private/create', {
                 controller: 'create',
                 templateUrl: '/routing/create/create.html'
+            })
+            .when( '/private/login', {
+                controller: 'login',
+                templateUrl: '/routing/login/login.html'
             });
+
     }
 ]);

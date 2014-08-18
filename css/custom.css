@@ -90,7 +90,7 @@ p{
                     REUSABLES
 -------------------------------------------------------------*/
 .page{
-    margin:40px 0 40px 340px;
+    margin:40px 40px 40px 340px;
     max-width:1000px;
 }
 .inner{
@@ -234,6 +234,7 @@ header{
 .header-profile-image{
     border:5px solid white;
     width:180px;
+    height:180px;
     border-radius:300px;
     margin:30px 0;
 }
@@ -246,7 +247,6 @@ header{
     color:#ddd;
     font-size:16px;
 }
-
 
 
 /*------------------------------------------------------------
@@ -262,13 +262,24 @@ header{
 }
 
 
-
-
 /*------------------------------------------------------------
                    POST PREVIEW
 -------------------------------------------------------------*/
 .post-preview-title{
     margin-bottom:0;
+}
+
+
+/*------------------------------------------------------------
+                   LOGIN FORM
+-------------------------------------------------------------*/
+.login-wrapper{
+    padding: 30px;
+    background: white;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width:400px;
 }
 
 

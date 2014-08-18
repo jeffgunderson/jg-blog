@@ -1,0 +1,26 @@
+<div class="page">
+    <div class="inner">
+
+        <h1>Login</h1>
+        <p>If you have found this page, you are probably not meant to be here. But good luck trying to login ;)</p>
+
+        <div class="login-wrapper">
+
+            <div ng-hide="auth.user">
+                <div ng-show="auth.error">{{auth.error}}</div>
+                <form ng-submit="auth.login( user )">
+                    <input class="input-block" type="text" ng-model="user.email" placeholder="email">
+                    <input class="input-block" type="password" ng-model="user.password" placeholder="password">
+                    <button class="button button-medium button-block button-blue">Login Now</button>
+                </form>
+            </div>
+
+            <div ng-show="auth.user">
+                <p>You're already logged in...</p>
+                <a class="button button-medium" ng-click="auth.logout()">Logout</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
