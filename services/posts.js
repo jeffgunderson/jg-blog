@@ -12,8 +12,8 @@ blog.app.factory( 'postService', [ '$firebase', function( $firebase ) {
                     title: data.title,
                     date: data.date,
                     permalink: data.permalink
-                })
-            } );
+                });
+            });
         },
 
         updatePost: function( data ) {
@@ -22,8 +22,8 @@ blog.app.factory( 'postService', [ '$firebase', function( $firebase ) {
                 postsListRef.child( data.permalink).update({
                     title: data.title,
                     permalink: data.permalink
-                })
-            } );
+                });
+            });
 
         },
 

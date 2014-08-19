@@ -5,5 +5,23 @@
         <span class="header-name">Jeff Gunderson</span>
         <br>
         <span class="header-title">Software Engineer @ <a class="blue" target="_blank" href="http://sizmek.com">Sizmek</a></span>
+
+        <nav>
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="bottom-nav">
+            <div class="inner">
+                <a ng-hide="auth.user" href="/private/login" class="login-button"></a>
+                <a ng-show="auth.user" href="/private/create" class="button button-blue button-block button-medium">Create a post</a>
+                <a ng-show="auth.user" class="button button-gray button-block button-medium" ng-click="auth.logout()">Logout</a>
+            </div>
+        </div>
+
     </div>
 </header>
